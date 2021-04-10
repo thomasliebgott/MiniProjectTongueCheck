@@ -22,9 +22,10 @@
 
     <!-- Button style -->
     <style name="Button_text">
-        <item name="android:textColor">@color/Button_Text_Color</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:textSize">15sp</item>
-        <item name="fontFamily">Roboto-Regular</item>
+        <item name="fontFamily">sans-serif-black</item>
+        <item name="android:text">@string/analyse_your_tongue</item>
     </style>
 
 </resources>

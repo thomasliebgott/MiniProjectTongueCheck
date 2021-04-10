@@ -7,42 +7,30 @@
     android:background="@drawable/bg_activities"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/buttonAnalyseYourTongue"
-        android:layout_width="212dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="164dp"
-        android:background="@color/teal_200"
-        android:text="@string/analyse_your_tongue"
-        style="@style/Button_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonDailyCheck"
+        style="@style/Button_text"
         android:layout_width="212dp"
         android:layout_height="56dp"
         android:layout_marginTop="84dp"
-        style="@style/Button_text"
         android:text="@string/daily_check"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/buttonAnalyseYourTongue"
         app:layout_constraintStart_toStartOf="@+id/buttonAnalyseYourTongue"
         app:layout_constraintTop_toBottomOf="@+id/buttonAnalyseYourTongue" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif-black"
-        android:textColor="#777070"
-        android:textSize="24sp"
-        android:textStyle="italic"
+    <Button
+        android:id="@+id/buttonAnalyseYourTongue"
+        android:layout_width="212dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="188dp"
+        android:text="@string/analyse_your_tongue"
+        android:textStyle="bold"
+        style="@style/Button_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Tongue Check" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -63,6 +51,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/headerb" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/Tongue_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/title"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
