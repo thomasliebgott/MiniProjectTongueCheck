@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">MiniProjectLiebgott</string>
+
+    <!-- Home Page -->
+    <string name="title">Title</string>
+    <string name="analyse_your_tongue">Analyse Your Tongue</string>
+    <string name="daily_check">Daily Check</string>
+
+    <!-- Page Quick Analyse -->
+    <string name="Title_quick_analyse">Quick Analyse</string>
+    <string name="take_picture">Take a picture</string>
+    <string name="tongue2">tongue2</string>
+    <string name="tongue1">tongue1</string>
+
+    <!-- Page details analyse -->
+    <string-array name="Tongue_Type">
+        <item>Light Pink</item>
+        <item>Gray Tongue Debris</item>
+        <item>Yellow Tongue Debris</item>
+        <item>Violet</item>
+        <item>Red </item>
+        <item>Bright Red </item>
+
+    </string-array>
+    
 </resources>

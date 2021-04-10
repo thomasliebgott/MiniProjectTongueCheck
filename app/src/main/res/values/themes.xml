@@ -1,8 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MiniProjectLiebgott" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.MiniProjectLiebgott" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
@@ -13,4 +12,19 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!-- Create header -->
+    <style name="Tongue_Title">
+        <item name="android:textColor">@color/Main_Title_Color</item>
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">bold</item>
+    </style>
+
+    <!-- Button style -->
+    <style name="Button_text">
+        <item name="android:textColor">@color/Button_Text_Color</item>
+        <item name="android:textSize">15sp</item>
+        <item name="fontFamily">Roboto-Regular</item>
+    </style>
+
 </resources>
