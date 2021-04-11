@@ -9,14 +9,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 public class TongueDetail extends AppCompatActivity {
-    EditText editTextDate;
+    EditText editTextDatee;
     EditText editTextFeeling;
     Spinner spinnerTongueType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tongue_detail);
-        editTextDate = findViewById(R.id.editTextDatee);
+        editTextDatee = findViewById(R.id.editTextDatee);
         editTextFeeling = findViewById(R.id.editTextFeeling);
         spinnerTongueType = findViewById(R.id.spinnerTongueType);
     }
@@ -27,7 +27,7 @@ public class TongueDetail extends AppCompatActivity {
         int index = DataModel.getInstance().listIndex;
         if(index >=0){
             Tongue listTongue = DataModel.getInstance().listTongue.get(index);
-            editTextDate.setText(listTongue.getDay());
+            editTextDatee.setText(listTongue.getDay());
             editTextFeeling.setText(listTongue.getFeeling());
             //TODO arriver a initialiser le spinner avec valeur
         }
@@ -35,28 +35,25 @@ public class TongueDetail extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        String date = editTextDate.getText().toString();
+        String date = editTextDatee.getText().toString();
         String feeling = editTextFeeling.getText().toString();
         String tongueType = spinnerTongueType.getSelectedItem().toString();
         if (date.length() > 1 && feeling.length() > 1){
             int index = DataModel.getInstance().listIndex;
             if(index < 0) {
-                //save to DataModel
-                DataModel.getInstance().listTongue.add(
-                        new Tongue(feeling,tongueType,date)
+                //add a new Tongue
+                DataModel.getInstance().listTongue.add(new Tongue(feeling,date,tongueType)
                 );
             }else{
-                DataModel.getInstance().listTongue.set(index,
-                        new Tongue(feeling,tongueType,date));
+                //set the tongue
+                DataModel.getInstance().listTongue.set(index, new Tongue(feeling,date,tongueType));
             }
-            DataModel.getInstance().saveToFile(TongueDetail.this);
+            DataModel.getInstance().saveToFile(TongueDetail.this); // save to file
             finish();
         }else{
-            AlertDialog.Builder builder =
-                    new AlertDialog.Builder(TongueDetail.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(TongueDetail.this);
             builder.setTitle(android.R.string.dialog_alert_title);
-            builder.setMessage("Some fields are empty"+
-                    " If you close it now you will lose your data");
+            builder.setMessage("Some fields are empty"+ " If you close it now you will lose your data");
             builder.setNegativeButton(android.R.string.no,null);
             builder.setPositiveButton(android.R.string.yes,
                     new DialogInterface.OnClickListener() {

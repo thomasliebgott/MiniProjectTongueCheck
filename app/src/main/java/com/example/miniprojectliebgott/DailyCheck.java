@@ -1,6 +1,7 @@
 package com.example.miniprojectliebgott;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,9 +22,17 @@ public class DailyCheck extends AppCompatActivity {
         recyclerView_Tongue.setAdapter(adapter);
 
         //set appearance of the recycle view
-        recyclerView_Tongue.setLayoutManager(
-                new LinearLayoutManager(DailyCheck.this)
+        recyclerView_Tongue.setLayoutManager(new LinearLayoutManager(DailyCheck.this)
         );
+        RecyclerView.ItemDecoration decoration = new DividerItemDecoration(DailyCheck.this,DividerItemDecoration.VERTICAL);
+        recyclerView_Tongue.addItemDecoration(decoration);
+        //indicate when we click to go on tongue mention
+        adapter.setOnItemClickListener(new DailyCheckAdapter.ClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                goToDetailActivity(position);
+            }
+        });
     }
 
     @Override
@@ -32,13 +41,16 @@ public class DailyCheck extends AppCompatActivity {
         adapter.notifyDataSetChanged(); //update data si on add
     }
 
-    public void goToTongueDetails(View view){
-        //DataModel.getInstance().itemSelected = index; // va chercher l'info du contatct
+    public void buttonAddClicked(View view){
+        goToDetailActivity(-1);
+    }
+
+    void goToDetailActivity(int index){
+        DataModel.getInstance().listIndex = index;
         Intent intent = new Intent(
-                DailyCheck.this,
-                TongueDetail.class
-        );
+                DailyCheck.this,TongueDetail.class);
         startActivity(intent);
     }
+
 
 }

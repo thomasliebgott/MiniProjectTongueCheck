@@ -2,12 +2,12 @@ package com.example.miniprojectliebgott;
 
 public class Tongue {
     private String feeling;
-    private String day;
+    private String date;
     private String typeOfTongue;
 
     public Tongue(String feeling, String day, String typeOfTongue) {
         this.feeling = feeling;
-        this.day = day;
+        this.date = day;
         this.typeOfTongue = typeOfTongue;
     }
 
@@ -20,11 +20,11 @@ public class Tongue {
     }
 
     public String getDay() {
-        return day;
+        return date;
     }
 
-    public void setDay(String day) {
-        this.day = day;
+    public void setdate(String date) {
+        this.date = date;
     }
 
     public String getTypeOfTongue() {
