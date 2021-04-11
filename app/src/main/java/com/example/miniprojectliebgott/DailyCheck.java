@@ -29,6 +29,7 @@ public class DailyCheck extends AppCompatActivity {
         //indicate when we click to go on tongue mention
         adapter.setOnItemClickListener(new DailyCheckAdapter.ClickListener() {
             @Override
+            
             public void onItemClick(View view, int position) {
                 goToDetailActivity(position);
             }
