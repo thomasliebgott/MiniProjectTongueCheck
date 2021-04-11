@@ -16,6 +16,9 @@ public class TongueDetail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tongue_detail);
+        editTextDate = findViewById(R.id.editTextDatee);
+        editTextFeeling = findViewById(R.id.editTextFeeling);
+        spinnerTongueType = findViewById(R.id.spinnerTongueType);
     }
 
     @Override

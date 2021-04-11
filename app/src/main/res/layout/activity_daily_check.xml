@@ -48,7 +48,8 @@
         android:layout_height="56dp"
         android:layout_marginStart="96dp"
         android:layout_marginTop="96dp"
-        android:text="@string/take_picture"
+        android:onClick="goToTongueDetails"
+        android:text="@string/add_New_Tongue"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

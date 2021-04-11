@@ -45,7 +45,7 @@
         android:id="@+id/editTextFeeling"
         android:layout_width="325dp"
         android:layout_height="47dp"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="92dp"
         android:autofillHints=""
         android:ems="10"
         android:gravity="start|top"
@@ -54,35 +54,35 @@
         android:maxLines="4"
         android:minLines="1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
-
-    <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="336dp"
-        android:ems="10"
-        android:hint="@string/date"
-        android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDatee" />
 
     <Spinner
         android:id="@+id/spinnerTongueType"
         android:layout_width="326dp"
         android:layout_height="51dp"
+        android:layout_marginBottom="20dp"
         android:entries="@array/Tongue_Type"
         app:layout_constraintBottom_toTopOf="@+id/editTextFeeling"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDate"
-        app:layout_constraintVertical_bias="0.393"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDatee"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editTextDatee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="328dp"
+        android:ems="10"
+        android:hint="@string/date"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        android:autofillHints="" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
