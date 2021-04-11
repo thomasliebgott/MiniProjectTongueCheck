@@ -7,28 +7,30 @@
     android:background="@drawable/bg_activities"
     tools:context=".MainActivity">
 
-
     <Button
         android:id="@+id/buttonDailyCheck"
         style="@style/Button_text"
         android:layout_width="212dp"
         android:layout_height="56dp"
         android:layout_marginTop="84dp"
+        android:onClick="goToDailyCheck"
         android:text="@string/daily_check"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/buttonAnalyseYourTongue"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/buttonAnalyseYourTongue"
         app:layout_constraintTop_toBottomOf="@+id/buttonAnalyseYourTongue" />
 
     <Button
         android:id="@+id/buttonAnalyseYourTongue"
+        style="@style/Button_text"
         android:layout_width="212dp"
         android:layout_height="56dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="188dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="192dp"
+        android:onClick="goToQuickAnalyse"
         android:text="@string/analyse_your_tongue"
         android:textStyle="bold"
-        style="@style/Button_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

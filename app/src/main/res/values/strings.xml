@@ -13,6 +13,10 @@
     <string name="tongue1">tongue1</string>
     <string name="button">Button</string>
 
+    <!-- Page detail Analyse -->
+    <string name="feeling">Feeling</string>
+    <string name="date">Date</string>
+
     <!-- Page details analyse -->
     <string-array name="Tongue_Type">
         <item>Light Pink</item>
@@ -23,5 +27,5 @@
         <item>Bright Red </item>
 
     </string-array>
-    
+
 </resources>
