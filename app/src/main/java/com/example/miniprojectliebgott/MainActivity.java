@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
     }
     // test 18h44
-    
+
     public void goToQuickAnalyse(View view){
         Intent intent = new Intent(
                 MainActivity.this,
