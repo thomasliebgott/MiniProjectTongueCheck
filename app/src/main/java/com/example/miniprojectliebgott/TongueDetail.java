@@ -42,8 +42,7 @@ public class TongueDetail extends AppCompatActivity {
             int index = DataModel.getInstance().listIndex;
             if(index < 0) {
                 //add a new Tongue
-                DataModel.getInstance().listTongue.add(new Tongue(feeling,date,tongueType)
-                );
+                DataModel.getInstance().listTongue.add(0,new Tongue(feeling,date,tongueType)); // TODO ajouter a une certaine position
             }else{
                 //set the tongue
                 DataModel.getInstance().listTongue.set(index, new Tongue(feeling,date,tongueType));

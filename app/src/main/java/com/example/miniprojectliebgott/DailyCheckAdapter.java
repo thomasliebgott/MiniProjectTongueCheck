@@ -40,14 +40,12 @@ public class DailyCheckAdapter extends RecyclerView.Adapter<DailyCheckAdapter.Vi
         Tongue tongues = DataModel.getInstance().listTongue.get(position);
         holder.textViewDate.setText(tongues.getDay());
         //TODO ajouter holder pour spinner
-
     }
 
     //fct cb items on a dans le screen
     @Override
     public int getItemCount() {
         return DataModel.getInstance().listTongue.size();
-
     }
 
     // va stocker les valeurs des langues

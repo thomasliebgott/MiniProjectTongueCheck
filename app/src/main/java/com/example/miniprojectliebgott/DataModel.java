@@ -13,21 +13,14 @@ public class DataModel {
     private static DataModel instance = new DataModel();
     private DataModel(){
         listTongue = new ArrayList<>();
-        listTongue.add(new Tongue("thomas","11 april","red"));
     }
     int listIndex = 0;
 
     public void saveToFile(Context context){
         try{
-            OutputStream stream = context.openFileOutput(
-                    "tongue.txt",
-                    context.MODE_PRIVATE
-            );
+            OutputStream stream = context.openFileOutput("tongue.txt", context.MODE_PRIVATE);
             OutputStreamWriter writer = new OutputStreamWriter(stream);
-            for (Tongue t:listTongue) {
-                writer.write(t.getFeeling()+";"+
-                        t.getDay()+";"+
-                        t.getTypeOfTongue()+"\n");
+            for (Tongue t:listTongue) { writer.write(t.getFeeling()+";"+ t.getDay()+";"+ t.getTypeOfTongue()+"\n");
             }
             writer.flush();
             writer.close();
