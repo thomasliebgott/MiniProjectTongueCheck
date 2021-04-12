@@ -13,12 +13,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    // test commit 18h40
     @Override
     protected void onResume() {
         super.onResume();
     }
-
+    // test 18h44
+    
     public void goToQuickAnalyse(View view){
         Intent intent = new Intent(
                 MainActivity.this,
