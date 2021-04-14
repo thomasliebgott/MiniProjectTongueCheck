@@ -29,6 +29,7 @@ public class TongueDetail extends AppCompatActivity {
             Tongue listTongue = DataModel.getInstance().listTongue.get(index);
             editTextDatee.setText(listTongue.getDay());
             editTextFeeling.setText(listTongue.getFeeling());
+            //spinnerTongueType.
             //TODO arriver a initialiser le spinner avec valeur
         }
     }

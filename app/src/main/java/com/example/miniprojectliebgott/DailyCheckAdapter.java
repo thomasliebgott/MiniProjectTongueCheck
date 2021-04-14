@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,6 +40,7 @@ public class DailyCheckAdapter extends RecyclerView.Adapter<DailyCheckAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Tongue tongues = DataModel.getInstance().listTongue.get(position);
         holder.textViewDate.setText(tongues.getDay());
+
         //TODO ajouter holder pour spinner
     }
 
@@ -51,10 +53,11 @@ public class DailyCheckAdapter extends RecyclerView.Adapter<DailyCheckAdapter.Vi
     // va stocker les valeurs des langues
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView textViewDate;
-
+        Spinner spinner;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewDate = itemView.findViewById(R.id.textViewDate);
+
             //TODO ajouter text view type de tongue en fonction spinner
 
             itemView.setOnClickListener(new View.OnClickListener() {

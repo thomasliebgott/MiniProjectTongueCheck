@@ -13,6 +13,8 @@ public class DataModel {
     private static DataModel instance = new DataModel();
     private DataModel(){
         listTongue = new ArrayList<>();
+        listTongue.add(new Tongue("joseph", "14 april","Light Pink"));
+
     }
     int listIndex = 0;
 
