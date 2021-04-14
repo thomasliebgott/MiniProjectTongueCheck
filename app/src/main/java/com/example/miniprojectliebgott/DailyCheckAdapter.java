@@ -40,7 +40,7 @@ public class DailyCheckAdapter extends RecyclerView.Adapter<DailyCheckAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Tongue tongues = DataModel.getInstance().listTongue.get(position);
         holder.textViewDate.setText(tongues.getDay());
-
+        holder.textViewTypeOfTongue.setText(tongues.getTypeOfTongue());
         //TODO ajouter holder pour spinner
     }
 
@@ -53,11 +53,12 @@ public class DailyCheckAdapter extends RecyclerView.Adapter<DailyCheckAdapter.Vi
     // va stocker les valeurs des langues
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView textViewDate;
-        Spinner spinner;
+        TextView textViewTypeOfTongue;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewDate = itemView.findViewById(R.id.textViewDate);
-
+            textViewTypeOfTongue = itemView.findViewById(R.id.textViewTypeOfTongue);
             //TODO ajouter text view type de tongue en fonction spinner
 
             itemView.setOnClickListener(new View.OnClickListener() {

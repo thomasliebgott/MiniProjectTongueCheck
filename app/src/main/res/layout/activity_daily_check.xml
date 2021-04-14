@@ -43,7 +43,6 @@
 
     <Button
         android:id="@+id/buttonAnalyseYourTongue"
-        style="@style/Button_text"
         android:layout_width="212dp"
         android:layout_height="56dp"
         android:layout_marginStart="96dp"
@@ -51,6 +50,7 @@
         android:onClick="buttonAddClicked"
         android:text="@string/add_New_Tongue"
         android:textStyle="bold"
+        android:backgroundTint="@color/teal_700"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

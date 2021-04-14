@@ -29,7 +29,12 @@ public class TongueDetail extends AppCompatActivity {
             Tongue listTongue = DataModel.getInstance().listTongue.get(index);
             editTextDatee.setText(listTongue.getDay());
             editTextFeeling.setText(listTongue.getFeeling());
-            //spinnerTongueType.
+            for (int i = 0; i < spinnerTongueType.getCount(); i++) {
+                if (spinnerTongueType.getItemAtPosition(i).equals(listTongue.getTypeOfTongue())) {
+                    spinnerTongueType.setSelection(i);
+                    break;
+                }
+            }
             //TODO arriver a initialiser le spinner avec valeur
         }
     }
@@ -43,7 +48,7 @@ public class TongueDetail extends AppCompatActivity {
             int index = DataModel.getInstance().listIndex;
             if(index < 0) {
                 //add a new Tongue
-                DataModel.getInstance().listTongue.add(0,new Tongue(feeling,date,tongueType)); // TODO ajouter a une certaine position
+                DataModel.getInstance().listTongue.add(0,new Tongue(feeling,date,tongueType));
             }else{
                 //set the tongue
                 DataModel.getInstance().listTongue.set(index, new Tongue(feeling,date,tongueType));
