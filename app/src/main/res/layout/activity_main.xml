@@ -11,13 +11,13 @@
         android:id="@+id/buttonDailyCheck"
         android:layout_width="212dp"
         android:layout_height="56dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/button_background_color"
         android:onClick="goToDailyCheck"
         android:text="@string/daily_check"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/buttonAnalyseYourTongue"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/buttonAnalyseYourTongue"
         app:layout_constraintTop_toBottomOf="@+id/buttonAnalyseYourTongue" />
 

@@ -20,18 +20,18 @@ public class DailyCheck extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_daily_check);
         recyclerView_Tongue = findViewById(R.id.recyclerView_Tongue);
         adapter = new DailyCheckAdapter();
-        recyclerView_Tongue.setAdapter(adapter);
+        recyclerView_Tongue.setAdapter(adapter); // va charger les dates du recycler view
 
         DataModel.getInstance().loadFromFile(DailyCheck.this); // allow us to load the data on the file
 
         //set appearance of the recycle view
         recyclerView_Tongue.setLayoutManager(new LinearLayoutManager(DailyCheck.this)
         );
-        RecyclerView.ItemDecoration decoration = new DividerItemDecoration(DailyCheck.this,DividerItemDecoration.VERTICAL);
-        recyclerView_Tongue.addItemDecoration(decoration);
+
         //indicate when we click to go on tongue mention
         adapter.setOnItemClickListener(new DailyCheckAdapter.ClickListener() {
             @Override
