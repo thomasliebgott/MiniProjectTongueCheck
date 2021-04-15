@@ -13,6 +13,7 @@ public class DataModel {
     private static DataModel instance = new DataModel();
     private DataModel(){
     }
+
     int listIndex = 0;
 
     public void saveToFile(Context context){

@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="60dp"
-    android:orientation="horizontal">
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    android:background="@drawable/recyclerview_bg">
 
     <TextView
         android:id="@+id/textViewDate"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="@android:string/unknownName"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="9dp"
+        />
+
 
     <TextView
         android:id="@+id/textViewTypeOfTongue"
@@ -20,5 +28,11 @@
         android:layout_weight="1"
         android:text="@android:string/unknownName"
         android:textAlignment="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="7dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
 </LinearLayout>

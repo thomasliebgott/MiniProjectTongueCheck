@@ -25,7 +25,8 @@ public class DailyCheckAdapter extends RecyclerView.Adapter<DailyCheckAdapter.Vi
 
     @NonNull
     @Override
-    //fct creation view
+
+    //boite pour controler tout les composant a controler
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // creer un intente
         Context context = parent.getContext();
@@ -35,16 +36,15 @@ public class DailyCheckAdapter extends RecyclerView.Adapter<DailyCheckAdapter.Vi
         return viewHolder;
     }
 
-    //fct put context on the view
+    //mise a jour de chaque model avec les infos sur la date en question
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Tongue tongues = DataModel.getInstance().listTongue.get(position);
         holder.textViewDate.setText(tongues.getDay());
         holder.textViewTypeOfTongue.setText(tongues.getTypeOfTongue());
-        //TODO ajouter holder pour spinner
     }
 
-    //fct cb items on a dans le screen
+    //renvoie le nb d'items on a dans le screen
     @Override
     public int getItemCount() {
         return DataModel.getInstance().listTongue.size();
@@ -59,7 +59,6 @@ public class DailyCheckAdapter extends RecyclerView.Adapter<DailyCheckAdapter.Vi
             super(itemView);
             textViewDate = itemView.findViewById(R.id.textViewDate);
             textViewTypeOfTongue = itemView.findViewById(R.id.textViewTypeOfTongue);
-            //TODO ajouter text view type de tongue en fonction spinner
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

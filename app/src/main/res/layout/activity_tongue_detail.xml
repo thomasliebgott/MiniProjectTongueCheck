@@ -43,46 +43,56 @@
 
     <EditText
         android:id="@+id/editTextFeeling"
-        android:layout_width="325dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="92dp"
+        android:layout_width="324dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="104dp"
         android:autofillHints=""
+        android:background="@drawable/edittext_bg"
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/feeling"
         android:inputType="textMultiLine"
         android:maxLines="4"
         android:minLines="1"
+        android:paddingLeft="15dp"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_bias="0.505"
+
+
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDatee" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDatee"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
         android:id="@+id/spinnerTongueType"
         android:layout_width="326dp"
         android:layout_height="51dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="156dp"
+        android:background="@color/spinner_bg"
         android:entries="@array/Tongue_Type"
-        app:layout_constraintBottom_toTopOf="@+id/editTextFeeling"
+        android:paddingLeft="9dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextDatee"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextDatee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="328dp"
+        android:layout_width="219dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginBottom="20dp"
+        android:autofillHints=""
+        android:background="@drawable/edittext_bg"
         android:ems="10"
         android:hint="@string/date"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        android:autofillHints="" />
+        android:paddingLeft="15dp"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerTongueType"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

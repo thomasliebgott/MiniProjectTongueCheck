@@ -9,10 +9,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 public class TongueDetail extends AppCompatActivity {
+
+    // define the ID of each componenents
     EditText editTextDatee;
     EditText editTextFeeling;
     Spinner spinnerTongueType;
+
     @Override
+    // intialisation of the function generate when the activity is create
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tongue_detail);

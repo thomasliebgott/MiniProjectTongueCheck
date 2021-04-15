@@ -50,7 +50,7 @@
         android:onClick="buttonAddClicked"
         android:text="@string/add_New_Tongue"
         android:textStyle="bold"
-        android:backgroundTint="@color/teal_700"
+        android:backgroundTint="@color/button_background_color"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,7 +60,9 @@
         android:layout_height="475dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
