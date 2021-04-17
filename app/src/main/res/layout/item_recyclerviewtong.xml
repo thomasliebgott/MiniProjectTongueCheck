@@ -6,8 +6,7 @@
     android:orientation="horizontal"
     app:cardBackgroundColor="@color/recycler_Daily_Background"
     app:cardCornerRadius="10dp"
-    android:layout_marginTop="15dp"
-    >
+    android:layout_marginTop="15dp">
 
     <TextView
         android:id="@+id/textViewDate"
