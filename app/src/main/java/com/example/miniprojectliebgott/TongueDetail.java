@@ -39,7 +39,6 @@ public class TongueDetail extends AppCompatActivity {
                     break;
                 }
             }
-            //TODO arriver a initialiser le spinner avec valeur
         }
     }
 

@@ -20,6 +20,7 @@
     <!-- Page detail Analyse -->
     <string name="feeling">Feeling</string>
     <string name="date">Date</string>
+    <string name="tongueone">tongueone</string>
 
     <!-- Page details analyse -->
     <string-array name="Tongue_Type">

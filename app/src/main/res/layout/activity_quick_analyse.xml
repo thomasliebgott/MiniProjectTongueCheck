@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".QuickAnalyse"
-    android:background="@drawable/bg_activities">
+    android:background="@drawable/bg_activitiesmain">
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
