@@ -28,8 +28,7 @@
     <string name="imagetongue1">imagetongue1</string>
     <string name="imagetongue4">imagetongue4</string>
     <string name="closewindow">closewindow</string>
-    <string name="bright_red">Bright Red</string>
-    <string name="a_thick_crimson_red_tongue">A thick, crimson-red tongue</string>
+
 
     <!-- Page details analyse -->
     <string-array name="Tongue_Type">
@@ -43,10 +42,12 @@
     </string-array>
 
     <!-- Popup description -->
-        <!-- Bright Red -->
-         <string name="brightRed">Sign of emptiness of Kidney Qi and heat in the blood.
+        <!-- Light pink -->
+        <string name="light_pink">Light Pink</string>
+        <string name="a_pale_swollen_tongue">A pale, swollen tongue</string>
 
-             Premenstrual syndrome with bleeding periods, insomnia Sensation of internal heat, frequent urination and painful urination
-             Precordial pain and internal agitation."</string>
+        <!-- Bright red -->
+        <string name="bright_red">Bright Red</string>
+        <string name="a_thick_crimson_red_tongue">A thick, crimson-red tongue</string>
 
 </resources>

@@ -4,44 +4,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="325dp"
-    android:layout_height="325dp"
+    android:layout_height="300dp"
     android:background="@color/pop_up"
     android:layout_gravity="center">
 
     <TextView
-        android:id="@+id/textViewTitlePopup1"
+        android:id="@+id/textViewTitlePopup2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="@string/light_pink"
+        android:text="@string/bright_red"
         android:textColor="@color/title_popup"
         android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewSubTitlePopUp1"
+        android:id="@+id/textViewSubTitlePopUp2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="80dp"
-        android:text="@string/a_pale_swollen_tongue"
+        android:text="@string/a_thick_crimson_red_tongue"
         android:textColor="@color/subtitle_popup"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewDescruptionPopup1"
+        android:id="@+id/textViewDescruptionPopup2"
         android:layout_width="268dp"
         android:layout_height="235dp"
         android:layout_marginTop="124dp"
-        android:text="Sign of weakness of the Kidney Qi \nAnd more precisely the Yang of the Kidney \n\nHere there is stasis of the form due to a deficiency of the Kidney Yang\nConcomitant signs:\nCold limbs, chilliness, weakness of the knees sterility, spermatorrhea, clear and abundant urine \nPale and soft tongue."
+        android:text="Sign of emptiness of Kidney Qi and heat in the blood.\n\nPremenstrual syndrome with bleeding periods, insomnia Sensation of internal heat, frequent urination and painful urination \nPrecordial pain and internal agitation."
         android:textColor="@color/description_popup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

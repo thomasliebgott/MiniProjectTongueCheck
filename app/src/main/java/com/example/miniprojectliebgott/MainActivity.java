@@ -9,22 +9,39 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    Dialog myDialog; //instanciation of dialog
+    Dialog myDialog2; //instanciation of dialog
+    Dialog myDialog1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        myDialog = new Dialog(this); //creation of dialog
+        myDialog2 = new Dialog(this); //creation of dialog
+        myDialog1 = new Dialog(this); //creation of dialog
     }
     //class show infomarmation on the popUp
-    public void showPopup(View view){
-        TextView textViewTitlePopup;
-        TextView textViewSubTitlePopUp;
-        TextView textViewDescruptionPopup;
-        myDialog.setContentView(R.layout.popuplayout1);
-
+    public void showPopup2(View view){
+        TextView textViewTitlePopup2;
+        TextView textViewSubTitlePopUp2;
+        TextView textViewDescruptionPopup2;
+        myDialog2.setContentView(R.layout.popuplayout2);
+        textViewTitlePopup2 = (TextView) myDialog2.findViewById(R.id.textViewTitlePopup2);
+        textViewSubTitlePopUp2 = (TextView) myDialog2.findViewById(R.id.textViewSubTitlePopUp2);
+        textViewDescruptionPopup2 = (TextView) myDialog2.findViewById(R.id.textViewDescruptionPopup2);
+        myDialog2.show();
     }
+
+    public void showPopup1(View view){
+        TextView textViewTitlePopup1;
+        TextView textViewSubTitlePopUp1;
+        TextView textViewDescruptionPopup1;
+        myDialog1.setContentView(R.layout.popuplayout1);
+        textViewTitlePopup1 = (TextView) myDialog1.findViewById(R.id.textViewTitlePopup1);
+        textViewSubTitlePopUp1 = (TextView) myDialog1.findViewById(R.id.textViewSubTitlePopUp1);
+        textViewDescruptionPopup1 = (TextView) myDialog1.findViewById(R.id.textViewDescruptionPopup1);
+        myDialog1.show();
+    }
+
 
     @Override
     protected void onResume() {
