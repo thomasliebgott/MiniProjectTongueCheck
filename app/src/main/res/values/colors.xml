@@ -13,6 +13,9 @@
     <color name="recycler_Daily_Background">#C3AF9C</color>
     <color name="button_background_color">#FF7E78</color>
     <color name="spinner_bg">#F5EDED</color>
-
+    <color name="pop_up">#ECD3BB</color>
+    <color name="title_popup">#AF2525</color>
+    <color name="subtitle_popup">#575757</color>
+    <color name="description_popup">#000000</color>
 
 </resources>

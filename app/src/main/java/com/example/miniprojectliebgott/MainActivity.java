@@ -2,16 +2,28 @@ package com.example.miniprojectliebgott;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    Dialog myDialog; //instanciation of dialog
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        myDialog = new Dialog(this); //creation of dialog
+    }
+    //class show infomarmation on the popUp
+    public void showPopup(View view){
+        TextView textViewTitlePopup;
+        TextView textViewSubTitlePopUp;
+        TextView textViewDescruptionPopup;
+        myDialog.setContentView(R.layout.popuplayout1);
+
     }
 
     @Override

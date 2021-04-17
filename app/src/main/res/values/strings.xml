@@ -21,6 +21,15 @@
     <string name="feeling">Feeling</string>
     <string name="date">Date</string>
     <string name="tongueone">tongueone</string>
+    <string name="imagetongue2">imagetongue2</string>
+    <string name="imagetongue6">imagetongue6</string>
+    <string name="imagetongue5">imagetongue5</string>
+    <string name="imagetongue3">imagetongue3</string>
+    <string name="imagetongue1">imagetongue1</string>
+    <string name="imagetongue4">imagetongue4</string>
+    <string name="closewindow">closewindow</string>
+    <string name="bright_red">Bright Red</string>
+    <string name="a_thick_crimson_red_tongue">A thick, crimson-red tongue</string>
 
     <!-- Page details analyse -->
     <string-array name="Tongue_Type">
@@ -32,5 +41,12 @@
         <item>Bright Red </item>
 
     </string-array>
+
+    <!-- Popup description -->
+        <!-- Bright Red -->
+         <string name="brightRed">Sign of emptiness of Kidney Qi and heat in the blood.
+
+             Premenstrual syndrome with bleeding periods, insomnia Sensation of internal heat, frequent urination and painful urination
+             Precordial pain and internal agitation."</string>
 
 </resources>
