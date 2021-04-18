@@ -54,6 +54,11 @@ public class TongueDetail extends AppCompatActivity {
         spinnerTongueType = findViewById(R.id.spinnerTongueType);
         initActivity();
 
+        if (ContextCompat.checkSelfPermission((TongueDetail.this),Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(TongueDetail.this,new String[]{
+                    Manifest.permission.CAMERA
+            },100);
+        }
         buttonPicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,8 +66,6 @@ public class TongueDetail extends AppCompatActivity {
                 startActivityForResult(intent,100);
             }
         });
-        
-
     }
 
     private void initActivity() {
@@ -71,6 +74,15 @@ public class TongueDetail extends AppCompatActivity {
         //createOnclickBtnPicture();
     }
 
+    private void createOnclickBtnPicture(){
+        buttonPicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                checkCameraPermission();
+            }
+        });
+
+    }
     //@RequiresApi(api = Build.VERSION_CODES.M)
     void checkCameraPermission(){
         if(ContextCompat.checkSelfPermission(TongueDetail.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
@@ -115,9 +127,9 @@ public class TongueDetail extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==RETURN_TAKE_PICTURE && resultCode==RESULT_OK){
+        if(requestCode==100){
             Bitmap picture = BitmapFactory.decodeFile(picturePath);
             imgShowPicture.setImageBitmap(picture);
         }

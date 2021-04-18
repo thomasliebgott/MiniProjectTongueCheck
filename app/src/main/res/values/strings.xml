@@ -42,35 +42,36 @@
     </string-array>
 
     <!-- Popup description -->
-        <!-- Light pink -->
-        <string name="light_pink">Light Pink</string>
-        <string name="a_pale_swollen_tongue">A pale, swollen tongue</string>
+    <!-- Light pink -->
+    <string name="light_pink">Light Pink</string>
+    <string name="a_pale_swollen_tongue">A pale, swollen tongue</string>
 
-        <!-- Bright red -->
-        <string name="bright_red">Bright Red</string>
-        <string name="a_thick_crimson_red_tongue">A thick, crimson-red tongue</string>
+    <!-- Bright red -->
+    <string name="bright_red">Bright Red</string>
+    <string name="a_thick_crimson_red_tongue">A thick, crimson-red tongue</string>
 
-        <!-- Yellow tongue debris  -->
-        <string name="Yellow_tongue_debris">Yellow Tongue Debris</string>
-        <string name="The_yellow_coating">The yellow coating</string>
+    <!-- Yellow tongue debris  -->
+    <string name="Yellow_tongue_debris">Yellow Tongue Debris</string>
+    <string name="The_yellow_coating">The yellow coating</string>
 
-        <!-- Red Tongue Debris  -->
-        <string name="Red_Tongue_Debris">Red Tongue Debris</string>
-        <string name="A_thick_crimson_red_tongue">A thick, crimson red tongue</string>
+    <!-- Red Tongue Debris  -->
+    <string name="Red_Tongue_Debris">Red Tongue Debris</string>
+    <string name="A_thick_crimson_red_tongue">A thick, crimson red tongue</string>
 
-        <!-- Gray Tongue Debris  -->
-        <string name="Gray_Tongue_Debris">Gray Tongue Debris</string>
-        <string name="The_dark_plaster">The Dark Plaster</string>
+    <!-- Gray Tongue Debris  -->
+    <string name="Gray_Tongue_Debris">Gray Tongue Debris</string>
+    <string name="The_dark_plaster">The Dark Plaster</string>
 
-        <!-- Violet  -->
-        <string name="Violet">Violet</string>
-        <string name="Bluish_red_tongue">Bluish red tongue</string>
+    <!-- Violet  -->
+    <string name="Violet">Violet</string>
+    <string name="Bluish_red_tongue">Bluish red tongue</string>
 
-        <!-- Red  -->
-        <string name="A_thin_light_red_tongue">A thin, light red tongue</string>
-        <string name="Red">Red</string>
+    <!-- Red  -->
+    <string name="A_thin_light_red_tongue">A thin, light red tongue</string>
+    <string name="Red">Red</string>
     <string name="todo">TODO</string>
     <string name="take_a_picture">take a picture</string>
+    <string name="welcomepage">welcomepage</string>
 
 
 </resources>
