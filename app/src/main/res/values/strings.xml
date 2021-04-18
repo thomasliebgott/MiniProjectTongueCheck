@@ -69,6 +69,8 @@
         <!-- Red  -->
         <string name="A_thin_light_red_tongue">A thin, light red tongue</string>
         <string name="Red">Red</string>
+    <string name="todo">TODO</string>
+    <string name="take_a_picture">take a picture</string>
 
 
 </resources>

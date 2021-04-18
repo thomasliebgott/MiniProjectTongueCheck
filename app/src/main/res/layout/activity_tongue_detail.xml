@@ -54,7 +54,7 @@
         android:inputType="textMultiLine"
         android:maxLines="4"
         android:minLines="1"
-        android:paddingLeft="15dp"
+        android:paddingStart="15dp"
         android:paddingTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +72,7 @@
         android:layout_marginBottom="168dp"
         android:background="@color/spinner_bg"
         android:entries="@array/Tongue_Type"
-        android:paddingLeft="9dp"
+        android:paddingStart="9dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -89,10 +89,33 @@
         android:ems="10"
         android:hint="@string/date"
         android:inputType="textPersonName"
-        android:paddingLeft="15dp"
+        android:paddingStart="15dp"
         android:textAlignment="viewStart"
         app:layout_constraintBottom_toTopOf="@+id/spinnerTongueType"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="92dp"
+        android:backgroundTint="@color/button_background_color"
+        android:text="@string/take_a_picture"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgShowPicture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/buttonPicture"
+        app:layout_constraintStart_toStartOf="@+id/buttonPicture"
+        app:layout_constraintTop_toBottomOf="@+id/buttonPicture"
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/todo" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
