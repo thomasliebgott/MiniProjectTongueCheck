@@ -17,6 +17,7 @@ public class DailyCheck extends AppCompatActivity {
 
     RecyclerView recyclerView_Tongue;
     DailyCheckAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +53,7 @@ public class DailyCheck extends AppCompatActivity {
             }
 
             @Override
-            //TODO onSwiped
+            //TODO onSwiped ou to delete
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 int index = viewHolder.getAdapterPosition();
                 Tongue listTongue =
@@ -69,7 +70,7 @@ public class DailyCheck extends AppCompatActivity {
                                 DataModel.getInstance().
                                         listTongue.add(index,listTongue);
                                 adapter.notifyItemInserted(index);
-                                DataModel.getInstance().saveToFile(DailyCheck.this);
+                                DataModel.getInstance().saveToFile(DailyCheck.this); // here we save the file by calling the function saveTofile declarated in the datamodel when we changed the
                             }
                         })
                         .show();

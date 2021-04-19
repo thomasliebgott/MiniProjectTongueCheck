@@ -34,21 +34,24 @@ import java.util.Date;
 
 public class TongueDetail extends AppCompatActivity {
 
-    // define the ID of each componenents
+    // get the references of the editText and the spinner button and imgShow
+
     EditText editTextDatee;
     EditText editTextFeeling;
     Spinner spinnerTongueType;
-
-    private static final int RETURN_TAKE_PICTURE = 1;
     private Button buttonPicture;
     private ImageView imgShowPicture;
+    // path of the picture
     private String picturePath = null;
+
+    private static final int RETURN_TAKE_PICTURE = 1;
 
     @Override
     // intialisation of the function generate when the activity is create
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tongue_detail);
+        // find our instance with the id
         editTextDatee = findViewById(R.id.editTextDatee);
         editTextFeeling = findViewById(R.id.editTextFeeling);
         spinnerTongueType = findViewById(R.id.spinnerTongueType);
@@ -66,15 +69,17 @@ public class TongueDetail extends AppCompatActivity {
                 startActivityForResult(intent,100);
             }
         });
+
+        Bitmap picture = BitmapFactory.decodeFile(picturePath);
+        imgShowPicture.setImageBitmap(picture);
     }
 
     private void initActivity() {
         buttonPicture = findViewById(R.id.buttonPicture);
         imgShowPicture = findViewById(R.id.imgShowPicture);
-        //createOnclickBtnPicture();
     }
 
-    private void createOnclickBtnPicture(){
+    public void createOnclickBtnPicture(View view){
         buttonPicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,7 +88,8 @@ public class TongueDetail extends AppCompatActivity {
         });
 
     }
-    //@RequiresApi(api = Build.VERSION_CODES.M)
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
     void checkCameraPermission(){
         if(ContextCompat.checkSelfPermission(TongueDetail.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(TongueDetail.this,
@@ -129,7 +135,7 @@ public class TongueDetail extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==100){
+        if(requestCode==RETURN_TAKE_PICTURE && resultCode==RESULT_OK){
             Bitmap picture = BitmapFactory.decodeFile(picturePath);
             imgShowPicture.setImageBitmap(picture);
         }
@@ -152,11 +158,14 @@ public class TongueDetail extends AppCompatActivity {
         }
     }
 
+    // this function allow us to save the data when the user press the button back
     @Override
     public void onBackPressed() {
+        // get the text on the editText and spinner and build them into string
         String date = editTextDatee.getText().toString();
         String feeling = editTextFeeling.getText().toString();
         String tongueType = spinnerTongueType.getSelectedItem().toString();
+        // if the date text and feeling text are complete we will save them into the dataModel
         if (date.length() > 1 && feeling.length() > 1){
             int index = DataModel.getInstance().listIndex;
             if(index < 0) {
@@ -166,9 +175,9 @@ public class TongueDetail extends AppCompatActivity {
                 //set the tongue
                 DataModel.getInstance().listTongue.set(index, new Tongue(feeling,date,tongueType));
             }
-            DataModel.getInstance().saveToFile(TongueDetail.this); // save to file
-            finish();
-        }else{
+            DataModel.getInstance().saveToFile(TongueDetail.this); // here we save the file by calling the function saveTofile declarated in the datamodel when we changed finished to initialised the data
+            finish(); // close the activity
+        }else{ // if the user don't put anything tin 
             AlertDialog.Builder builder = new AlertDialog.Builder(TongueDetail.this);
             builder.setTitle(android.R.string.dialog_alert_title);
             builder.setMessage("Some fields are empty"+ " If you close it now you will lose your data");
