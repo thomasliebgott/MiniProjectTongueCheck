@@ -35,7 +35,6 @@ import java.util.Date;
 public class TongueDetail extends AppCompatActivity {
 
     // get the references of the editText and the spinner button and imgShow
-
     EditText editTextDatee;
     EditText editTextFeeling;
     Spinner spinnerTongueType;
@@ -44,10 +43,11 @@ public class TongueDetail extends AppCompatActivity {
     // path of the picture
     private String picturePath = null;
 
+
     private static final int RETURN_TAKE_PICTURE = 1;
 
     @Override
-    // intialisation of the function generate when the activity is create
+    // initialisation of the function generate when the activity is create
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tongue_detail);
@@ -141,15 +141,16 @@ public class TongueDetail extends AppCompatActivity {
         }
     }
 
+    // call the activity whenever the user go to the application
     @Override
     protected void onResume() {
         super.onResume();
-        int index = DataModel.getInstance().listIndex;
-        if(index >=0){
+        int index = DataModel.getInstance().listIndex; // get the index which was clicked in the recycler view of the class DailyCheck
+        if(index >=0){ // if the index is not null set the editTextDate and editTextfelling and the spinner with the value already save in the file tongue.txt
             Tongue listTongue = DataModel.getInstance().listTongue.get(index);
             editTextDatee.setText(listTongue.getDay());
             editTextFeeling.setText(listTongue.getFeeling());
-            for (int i = 0; i < spinnerTongueType.getCount(); i++) {
+            for (int i = 0; i < spinnerTongueType.getCount(); i++) { // set the spinner with the value store on the file tongue.txt
                 if (spinnerTongueType.getItemAtPosition(i).equals(listTongue.getTypeOfTongue())) {
                     spinnerTongueType.setSelection(i);
                     break;
@@ -177,20 +178,20 @@ public class TongueDetail extends AppCompatActivity {
             }
             DataModel.getInstance().saveToFile(TongueDetail.this); // here we save the file by calling the function saveTofile declarated in the datamodel when we changed finished to initialised the data
             finish(); // close the activity
-        }else{ // if the user don't put anything tin 
-            AlertDialog.Builder builder = new AlertDialog.Builder(TongueDetail.this);
-            builder.setTitle(android.R.string.dialog_alert_title);
-            builder.setMessage("Some fields are empty"+ " If you close it now you will lose your data");
-            builder.setNegativeButton(android.R.string.no,null);
-            builder.setPositiveButton(android.R.string.yes,
-                    new DialogInterface.OnClickListener() {
+        }else{ // if the user don't put anything in the edit date and feeling we will alert him with an alert dialog
+            AlertDialog.Builder builder = new AlertDialog.Builder(TongueDetail.this); // use the alert dialog and build it
+            builder.setTitle(android.R.string.dialog_alert_title); // set the title of the dialog
+            builder.setMessage("Some fields are empty"+ " If you close it now you will lose your data"); // set the message of the dialog
+            builder.setNegativeButton(android.R.string.no,null); // create a negative button
+            builder.setPositiveButton(android.R.string.yes, // create the button yes
+                    new DialogInterface.OnClickListener() { // so if the user click on ok it will finish the activity
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             finish();
                         }
                     });
-            AlertDialog dialog = builder.create();
-            dialog.show();
+            AlertDialog dialog = builder.create(); // build the alert dialog
+            dialog.show(); // dialog show to the user
         }
     }
 }

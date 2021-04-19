@@ -25,41 +25,46 @@ public class DailyCheckAdapter extends RecyclerView.Adapter<DailyCheckAdapter.Vi
 
     @NonNull
     @Override
-
-    //boite pour controler tout les composant a controler
+    // box to controle the components of the controller
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // creer un intente
-        Context context = parent.getContext();
+        Context context = parent.getContext(); // we create a context with the getContext which is not an activity so we have to get it from the parent viewGroup
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View itemView = layoutInflater.inflate(R.layout.item_recyclerviewtong,parent,false);
-        ViewHolder viewHolder = new ViewHolder((itemView));
+        View itemView = layoutInflater.inflate(R.layout.item_recyclerviewtong,parent,false); // get the layout and root the elements
+        ViewHolder viewHolder = new ViewHolder((itemView)); // get the view holder creater by the itemView
         return viewHolder;
     }
 
-    //mise a jour de chaque model avec les infos sur la date en question
+    // update each model with the information on the date and type of tongue on the recycler View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Tongue tongues = DataModel.getInstance().listTongue.get(position);
+        Tongue tongues = DataModel.getInstance().listTongue.get(position); // get the object tongue
+        //get the holder of our components
         holder.textViewDate.setText(tongues.getDay());
         holder.textViewTypeOfTongue.setText(tongues.getTypeOfTongue());
     }
 
-    //renvoie le nb d'items on a dans le screen
+    //give the number of items that we will have on the screen
     @Override
     public int getItemCount() {
         return DataModel.getInstance().listTongue.size();
     }
 
-    // va stocker les valeurs des langues
+    // create the class View Holder
+    // this class will store the values of the tongues
     public class ViewHolder extends RecyclerView.ViewHolder{
+        // reference of the edit text on the layout
         TextView textViewDate;
         TextView textViewTypeOfTongue;
 
+        // create the constructor of the ViewHolderClasse
+        // allow us to change the contend of the view holder
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            textViewDate = itemView.findViewById(R.id.textViewDate);
+            textViewDate = itemView.findViewById(R.id.textViewDate); // we get the textView from the itemView before
             textViewTypeOfTongue = itemView.findViewById(R.id.textViewTypeOfTongue);
 
+            // this part allow us to clic on the recycler view to open the activity TongueDetail.java
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

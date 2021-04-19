@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 
 public class WelcomePage extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT = 1000;
+    // crete a time domaine
+    private static int SPLASH_TIME_OUT = 1000; // but the time delay at 1 second
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,6 @@ public class WelcomePage extends AppCompatActivity {
                 startActivity(welcomeIntent);
                 finish();
             }
-        },SPLASH_TIME_OUT);
+        },SPLASH_TIME_OUT);// with the time delay fix at 1s
     }
 }
