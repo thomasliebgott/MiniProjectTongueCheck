@@ -40,17 +40,46 @@ public class DailyCheck extends AppCompatActivity {
         });
 
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(
-                new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT) {// tell to the app to move left with on swiped
+                new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP|ItemTouchHelper.DOWN,ItemTouchHelper.LEFT) {// tell to the app to move left with on swiped and up and down
                     @Override
                     public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+
+                        int fromPos = viewHolder.getAdapterPosition();// the original position of the item that was changed
+                        int toPos = target.getAdapterPosition(); // the target position
+
+                        // modidy the value of the recycler view
+                        Tongue fromTongue = DataModel.getInstance().listTongue.get(fromPos);
+                        Tongue toTongue = DataModel.getInstance().listTongue.get(toPos);
+
+                        //get the position of the data on the file tongue.txt
+                        DataModel.getInstance().listTongue.set(fromPos,toTongue);
+                        DataModel.getInstance().listTongue.set(toPos,fromTongue);
+
+                        adapter.notifyItemMoved(fromPos,toPos); // with e good animation
+                        DataModel.getInstance().saveToFile(DailyCheck.this); // save the  position of the data on the file tongue.txt
+
                         return false;
                     }
 
                     @Override
                     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                         int index = viewHolder.getAdapterPosition();
-                        DataModel.getInstance().listTongue.remove(index); // selectr teh good recycler view
+                        Tongue tongueDetail = DataModel.getInstance().listTongue.get(index);
+                        DataModel.getInstance().listTongue.remove(index); // select teh good recycler view
                         adapter.notifyItemRemoved(index); // notify that the item was remove
+                        DataModel.getInstance().saveToFile(DailyCheck.this); // save the modification of the delete
+                        //create a snack bar to advertise the user when he delete something
+                        View content = findViewById(android.R.id.content); // to be sure to be on top of everything else
+                        Snackbar.make(content,"Item was delete",Snackbar.LENGTH_SHORT).setAction("cancel", new View.OnClickListener() {
+                            @Override
+                            // this part will reUpload the file
+                            public void onClick(View v) {
+                                DataModel.getInstance().listTongue.add(index,tongueDetail);
+                                adapter.notifyItemInserted(index);
+                                DataModel.getInstance().saveToFile(DailyCheck.this); // save the modification of the delete
+                            }
+                        }).show();
+
                     }
                 }
         );

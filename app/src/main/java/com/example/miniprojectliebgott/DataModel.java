@@ -15,24 +15,6 @@ public class DataModel {
 
     //Creation of the private constructor
     private DataModel(){
-        listTongue.add(new Tongue("I feel great", "14 april","Light Pink"));
-        listTongue.add(new Tongue("a little bit tired ", "13 april","Light Pink"));
-        listTongue.add(new Tongue("I feel great", "12 april","Light Pink"));
-        listTongue.add(new Tongue("I feel great", "11 april","Light Pink"));
-        listTongue.add(new Tongue("I feel great", "10 april","Light Pink"));
-        listTongue.add(new Tongue("I feel great", "9 april","Light Pink"));
-        listTongue.add(new Tongue("a little bit tired ", "8 april","Light Pink"));
-        listTongue.add(new Tongue("I feel great", "7 april","Light Pink"));
-        listTongue.add(new Tongue("a little bit tired ", "6 april","Light Pink"));
-        listTongue.add(new Tongue("I feel great", "5 april","Light Pink"));
-        listTongue.add(new Tongue("a little bit tired ", "4 april","Light Pink"));
-        listTongue.add(new Tongue("I feel great", "3 april","Light Pink"));
-        listTongue.add(new Tongue("a little bit tired ", "2 april","Light Pink"));
-        listTongue.add(new Tongue("I feel great", "1 april","Light Pink"));
-        listTongue.add(new Tongue("a little bit tired ", "31 mars","Light Pink"));
-        listTongue.add(new Tongue("I feel great", "30 mars","Light Pink"));
-        listTongue.add(new Tongue("a little bit tired ", "29 mars","Light Pink"));
-        listTongue.add(new Tongue("I feel great", "28 mars","Light Pink"));
     }
 
     // creation of the list of index for the recycler view
