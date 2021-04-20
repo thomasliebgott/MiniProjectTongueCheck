@@ -101,22 +101,23 @@
         android:layout_marginStart="128dp"
         android:layout_marginTop="92dp"
         android:backgroundTint="@color/button_background_color"
-        android:onClick="createOnclickBtnPicture"
         android:text="@string/take_a_picture"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imgShowPicture"
-        android:layout_width="181dp"
-        android:layout_height="163dp"
+        android:layout_width="253dp"
+        android:layout_height="185dp"
         android:layout_marginTop="32dp"
-        android:contentDescription="@string/todo"
+        android:contentDescription="@string/image"
+        app:layout_constraintBottom_toTopOf="@+id/editTextDatee"
         app:layout_constraintEnd_toEndOf="@+id/buttonPicture"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="@+id/buttonPicture"
         app:layout_constraintTop_toBottomOf="@+id/buttonPicture"
-        tools:srcCompat="@tools:sample/avatars" />
-
+        app:layout_constraintVertical_bias="0.0"
+        tools:srcCompat="@drawable/headera" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
     // go to the daulyCheck activity
     public void goToDailyCheck(View view){
         //DataModel.getInstance().itemSelected = index;
-        Intent intent = new Intent(
+        Intent intent = new Intent( // beggiging of the communication between the two activity
                 MainActivity.this,
                 DailyCheck.class
         );

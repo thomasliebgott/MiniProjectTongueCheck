@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -37,43 +38,24 @@ public class DailyCheck extends AppCompatActivity {
                 goToDetailActivity(position);
             }
         });
-            //TODO
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.Callback() {
-            @Override
-            public int getMovementFlags(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
-                return 0;
-            }
-            // TODO
-            @Override
-            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
-                return false;
-            }
-            @Override
-            //TODO onSwiped ou to delete
-            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-                int index = viewHolder.getAdapterPosition();
-                Tongue listTongue =
-                        DataModel.getInstance().listTongue.get(index);
-                DataModel.getInstance().listTongue.remove(index);
-                adapter.notifyItemRemoved(index);
-                DataModel.getInstance().saveToFile(DailyCheck.this);
 
-                View content = findViewById(android.R.id.content);
-                Snackbar.make(content,
-                        "day "+listTongue.getDay()+" was deleted", Snackbar.LENGTH_LONG).setAction("Undo", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                DataModel.getInstance().
-                                        listTongue.add(index,listTongue);
-                                adapter.notifyItemInserted(index);
-                                DataModel.getInstance().saveToFile(DailyCheck.this); // here we save the file by calling the function saveTofile declarated in the datamodel when we changed the
-                            }
-                        })
-                        .show();
-            }
-        }
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(
+                new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT) {// tell to the app to move left with on swiped
+                    @Override
+                    public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                        return false;
+                    }
+
+                    @Override
+                    public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                        int index = viewHolder.getAdapterPosition();
+                        DataModel.getInstance().listTongue.remove(index); // selectr teh good recycler view
+                        adapter.notifyItemRemoved(index); // notify that the item was remove
+                    }
+                }
         );
         itemTouchHelper.attachToRecyclerView(recyclerView_Tongue);
+
     }
 
     // call the activity whenever the user go to the application

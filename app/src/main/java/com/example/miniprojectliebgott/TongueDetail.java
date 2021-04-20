@@ -43,7 +43,6 @@ public class TongueDetail extends AppCompatActivity {
     // path of the picture
     private String picturePath = null;
 
-
     private static final int RETURN_TAKE_PICTURE = 1;
 
     @Override
@@ -51,81 +50,68 @@ public class TongueDetail extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tongue_detail);
-        // find our instance with the id
         editTextDatee = findViewById(R.id.editTextDatee);
         editTextFeeling = findViewById(R.id.editTextFeeling);
         spinnerTongueType = findViewById(R.id.spinnerTongueType);
         initActivity();
+    }
+    //Create an activity to start the "picture" part
+    private void initActivity(){
+        buttonPicture = findViewById(R.id.buttonPicture); //search the id of the button to take a picture
+        imgShowPicture = findViewById(R.id.imgShowPicture); //search the id of the picture which will be replace
+        createOnclickBtnPicture(); //apply the function when the button is clicked
+    }
 
-        if (ContextCompat.checkSelfPermission((TongueDetail.this),Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(TongueDetail.this,new String[]{
-                    Manifest.permission.CAMERA
-            },100);
-        }
+    //the function when the button is clicked
+    private void createOnclickBtnPicture(){
         buttonPicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent,100);
+                checkCameraPermission();  //apply the function to allow the camera to open
             }
         });
-
-        Bitmap picture = BitmapFactory.decodeFile(picturePath);
-        imgShowPicture.setImageBitmap(picture);
     }
 
-    private void initActivity() {
-        buttonPicture = findViewById(R.id.buttonPicture);
-        imgShowPicture = findViewById(R.id.imgShowPicture);
-    }
-
-    public void createOnclickBtnPicture(View view){
-        buttonPicture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                checkCameraPermission();
-            }
-        });
-
-    }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
-    void checkCameraPermission(){
-        if(ContextCompat.checkSelfPermission(TongueDetail.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(TongueDetail.this,
-                    new String[]{
-                            Manifest.permission.CAMERA
-                    },100);
+    void checkCameraPermission(){ //the function to allow the camera to open
+        if(getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY)){
+            if(checkSelfPermission(Manifest.permission.CAMERA) !=
+                    PackageManager.PERMISSION_GRANTED){
+                requestPermissions(new String[]{Manifest.permission.CAMERA},100); //check the validity of the permission
+            }else{
+                takePicture(); //if there is no problem, else we can take a picture and apply this function
+            }
         }
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
+                                           @NonNull int[] grantResults) { //Check the request permissions to the users
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if(requestCode == 100){
             if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                takePicture();
+                takePicture(); //if there is no problem the permission is granted
             }else{
                 Toast.makeText(this,"Camera permisson denied",Toast.LENGTH_LONG)
-                        .show();
+                        .show(); //else the permission is denied
             }
         }
     }
 
-    private void takePicture(){
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if(intent.resolveActivity(getPackageManager()) != null){
-            String time = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-            File photoDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-            try {
+    private void takePicture(){ //the function to take a picture
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE); //create the intent
+        if(intent.resolveActivity(getPackageManager()) != null){ //if there is an "information" here a picture we can go save it
+            String time = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date()); //create the time
+            File photoDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES); //save the picture taken in photoDir
+            try { //save the picture taken with its time and replace the tongue picture with the picture taken
                 File photoFile = File.createTempFile("picture" + time, ".jpg", photoDir);
                 picturePath = photoFile.getAbsolutePath();
                 Uri pictureUri = FileProvider.getUriForFile(TongueDetail.this,
                         "com.example.miniprojectliebgott.fileprovider",
                         photoFile);
                 intent.putExtra(MediaStore.EXTRA_OUTPUT,pictureUri);
-                startActivityForResult(intent, RETURN_TAKE_PICTURE);
+                startActivityForResult(intent, RETURN_TAKE_PICTURE); //function to replace the 2 pictures
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -133,11 +119,11 @@ public class TongueDetail extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {//create the function to replace teh 2 pictures
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==RETURN_TAKE_PICTURE && resultCode==RESULT_OK){
-            Bitmap picture = BitmapFactory.decodeFile(picturePath);
-            imgShowPicture.setImageBitmap(picture);
+        if(requestCode==RETURN_TAKE_PICTURE && resultCode==RESULT_OK){//if all its ok
+            Bitmap picture = BitmapFactory.decodeFile(picturePath); //we take the path where the picture is saved
+            imgShowPicture.setImageBitmap(picture); //we replace the 2
         }
     }
 
