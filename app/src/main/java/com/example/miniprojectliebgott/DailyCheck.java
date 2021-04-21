@@ -47,7 +47,7 @@ public class DailyCheck extends AppCompatActivity {
                         int fromPos = viewHolder.getAdapterPosition();// the original position of the item that was changed
                         int toPos = target.getAdapterPosition(); // the target position
 
-                        // modidy the value of the recycler view
+                        // modify the value of the recycler view
                         Tongue fromTongue = DataModel.getInstance().listTongue.get(fromPos);
                         Tongue toTongue = DataModel.getInstance().listTongue.get(toPos);
 
@@ -55,23 +55,25 @@ public class DailyCheck extends AppCompatActivity {
                         DataModel.getInstance().listTongue.set(fromPos,toTongue);
                         DataModel.getInstance().listTongue.set(toPos,fromTongue);
 
-                        adapter.notifyItemMoved(fromPos,toPos); // with e good animation
+                        adapter.notifyItemMoved(fromPos,toPos); // with the good animation
                         DataModel.getInstance().saveToFile(DailyCheck.this); // save the  position of the data on the file tongue.txt
 
                         return false;
+
                     }
 
                     @Override
                     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                         int index = viewHolder.getAdapterPosition();
                         Tongue tongueDetail = DataModel.getInstance().listTongue.get(index);
-                        DataModel.getInstance().listTongue.remove(index); // select teh good recycler view
+                        DataModel.getInstance().listTongue.remove(index); // select the good recycler view
                         adapter.notifyItemRemoved(index); // notify that the item was remove
                         DataModel.getInstance().saveToFile(DailyCheck.this); // save the modification of the delete
                         //create a snack bar to advertise the user when he delete something
                         View content = findViewById(android.R.id.content); // to be sure to be on top of everything else
                         Snackbar.make(content,"Item was delete",Snackbar.LENGTH_SHORT).setAction("cancel", new View.OnClickListener() {
                             @Override
+
                             // this part will reUpload the file
                             public void onClick(View v) {
                                 DataModel.getInstance().listTongue.add(index,tongueDetail);
@@ -86,13 +88,13 @@ public class DailyCheck extends AppCompatActivity {
         itemTouchHelper.attachToRecyclerView(recyclerView_Tongue);
 
     }
-
     // call the activity whenever the user go to the application
     @Override
     protected void onResume() {
         super.onResume();
         adapter.notifyDataSetChanged(); //notity it that the data have been changed
     }
+
     // open the activity TongueDetails without information because we choose an index of -1 to tell to the index list that it represent any type of Tongue, and it's a new one
     public void buttonAddClicked(View view){
         goToDetailActivity(-1);

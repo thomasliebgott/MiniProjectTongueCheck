@@ -55,7 +55,7 @@ public class TongueDetail extends AppCompatActivity {
         spinnerTongueType = findViewById(R.id.spinnerTongueType);
         initActivity();
     }
-    
+
     //Create an activity to start the "picture" part
     private void initActivity(){
         buttonPicture = findViewById(R.id.buttonPicture); //search the id of the button to take a picture

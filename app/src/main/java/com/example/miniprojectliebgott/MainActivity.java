@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
     // get the reference of the dialog
     Dialog myDialog1;
     Dialog myDialog2;

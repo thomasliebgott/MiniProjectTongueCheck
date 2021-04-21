@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class DailyCheckAdapter extends RecyclerView.Adapter<DailyCheckAdapter.ViewHolder> {
 
     // creation of our function onClick
+
     public interface ClickListener{
         void onItemClick(View view,int position);
     }
@@ -59,6 +60,7 @@ public class DailyCheckAdapter extends RecyclerView.Adapter<DailyCheckAdapter.Vi
 
         // create the constructor of the ViewHolderClasse
         // allow us to change the contend of the view holder
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewDate = itemView.findViewById(R.id.textViewDate); // we get the textView from the itemView before
